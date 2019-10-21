@@ -1,0 +1,33 @@
+Data settings
+-------------
+  * Using data files located at 's3://d-blink/datasets/RLdata10000.csv'
+  * The record identifier attribute is 'rec_id'
+  * There is no file identifier
+  * The entity identifier attribute is 'ent_id'
+  * The matching attributes are 'by', 'bm', 'bd', 'fname_c1', 'lname_c1'
+
+Hyperparameter settings
+-----------------------
+  * 'by' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'bm' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'bd' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'fname_c1' (id=3) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'lname_c1' (id=4) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=10.0, beta=1000.0)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=1, attributeIds=[3])
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to 'hdfs:///dblink-output/'
+  * Saving Spark checkpoints to 'hdfs:///dblink-checkpoints/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from new initial state with sampleSize=10000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 0
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 10000) using {'pairwise', 'cluster'} metrics
+  * CopyFilesStep: Copying {cluster-size-distribution.csv, partition-sizes.csv, diagnostics.csv, shared-most-probable-clusters.csv, run.txt, evaluation-results.txt} to destination s3://d-blink/RLdata10000_2partitions_PCG-I/

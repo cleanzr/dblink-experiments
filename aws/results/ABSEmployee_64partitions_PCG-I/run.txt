@@ -1,0 +1,32 @@
+Data settings
+-------------
+  * Using data files located at '/data/neil/EDM Simulation v2.mac.csv'
+  * The record identifier attribute is 'RECID'
+  * The file identifier attribute is 'FILEID'
+  * The entity identifier attribute is 'ENTID'
+  * The matching attributes are 'MB', 'BDAY', 'BYEAR', 'SEX'
+
+Hyperparameter settings
+-----------------------
+  * 'MB' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=600.0, beta=60000.0)
+  * 'BDAY' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=600.0, beta=60000.0)
+  * 'BYEAR' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=600.0, beta=60000.0)
+  * 'SEX' (id=3) with ConstantSimilarityFn and BetaShapeParameters(alpha=600.0, beta=60000.0)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=6, attributeIds=[0,1,2])
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to '/data/neil/dblink-output/'
+  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from new initial state with sampleSize=10000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 0
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 10000) using {'pairwise', 'cluster'} metrics
+  * CopyFilesStep: Copying {cluster-size-distribution.csv, partition-sizes.csv, diagnostics.csv, shared-most-probable-clusters.csv, run.txt, evaluation-results.txt} to destination /data/neil/ABSEmployee_64partitions_PCG-I/
