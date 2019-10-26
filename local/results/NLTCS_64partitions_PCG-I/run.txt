@@ -1,0 +1,33 @@
+Data settings
+-------------
+  * Using data files located at '/data/neil/datasets/proc_nltcs.csv'
+  * The record identifier attribute is 'REC'
+  * The file identifier attribute is 'FILE'
+  * The entity identifier attribute is 'SEQ'
+  * The matching attributes are 'SEX', 'DOB_DAY', 'DOB_MONTH', 'DOB_YEAR', 'STATE', 'REGOFF'
+
+Hyperparameter settings
+-----------------------
+  * 'SEX' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+  * 'DOB_DAY' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+  * 'DOB_MONTH' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+  * 'DOB_YEAR' (id=3) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+  * 'STATE' (id=4) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+  * 'REGOFF' (id=5) with ConstantSimilarityFn and BetaShapeParameters(alpha=57.077, beta=5707.7)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=6, attributeIds=[2,1,3,4])
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to '/data/neil/jcgs/NLTCS_64partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from new initial state with sampleSize=5000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 0
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 10000) using {'pairwise', 'cluster'} metrics

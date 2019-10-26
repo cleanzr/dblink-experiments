@@ -1,0 +1,35 @@
+Data settings
+-------------
+  * Using data files located at '/data/neil/datasets/comp.fixed.0810.csv'
+  * The record identifier attribute is 'RECID'
+  * The file identifier attribute is 'ANNO'
+  * The entity identifier attribute is 'ENTID'
+  * The matching attributes are 'IREG', 'SESSO', 'ANASCI', 'STUDIO', 'PAR', 'STACIV', 'PERC', 'CFDIC'
+
+Hyperparameter settings
+-----------------------
+  * 'IREG' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'SESSO' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'ANASCI' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'STUDIO' (id=3) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'PAR' (id=4) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'STACIV' (id=5) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'PERC' (id=6) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+  * 'CFDIC' (id=7) with ConstantSimilarityFn and BetaShapeParameters(alpha=39.743, beta=3974.3)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=3, attributeIds=[2,1,0,3])
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to '/data/neil/jcgs/SHIW_8partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/dblink-checkpoints-2/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from new initial state with sampleSize=10000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 0
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 10000) using {'pairwise', 'cluster'} metrics

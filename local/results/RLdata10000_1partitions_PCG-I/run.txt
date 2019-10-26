@@ -1,0 +1,32 @@
+Data settings
+-------------
+  * Using data files located at '/data/neil/datasets/RLdata10000.csv'
+  * The record identifier attribute is 'rec_id'
+  * There is no file identifier
+  * The entity identifier attribute is 'ent_id'
+  * The matching attributes are 'by', 'bm', 'bd', 'fname_c1', 'lname_c1'
+
+Hyperparameter settings
+-----------------------
+  * 'by' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'bm' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'bd' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'fname_c1' (id=3) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=10.0, beta=1000.0)
+  * 'lname_c1' (id=4) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=10.0, beta=1000.0)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=0)
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to '/data/neil/jcgs/RLdata10000_1partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints-3/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from new initial state with sampleSize=10000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 0
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 10000) using {'pairwise', 'cluster'} metrics

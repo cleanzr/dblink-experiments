@@ -1,0 +1,33 @@
+Data settings
+-------------
+  * Using data files located at '/data/neil/datasets/ncvoter-20140619-temporal-balanced-ratio-1to1.csv'
+  * The record identifier attribute is 'rec_id'
+  * The file identifier attribute is 'file_id'
+  * The entity identifier attribute is 'voter_id'
+  * The matching attributes are 'age', 'gender', 'zip_code', 'first_name', 'middle_name', 'last_name'
+
+Hyperparameter settings
+-----------------------
+  * 'age' (id=0) with ConstantSimilarityFn and BetaShapeParameters(alpha=448.134, beta=44813.4)
+  * 'gender' (id=1) with ConstantSimilarityFn and BetaShapeParameters(alpha=448.134, beta=44813.4)
+  * 'zip_code' (id=2) with ConstantSimilarityFn and BetaShapeParameters(alpha=448.134, beta=44813.4)
+  * 'first_name' (id=3) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=448.134, beta=44813.4)
+  * 'middle_name' (id=4) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=448.134, beta=44813.4)
+  * 'last_name' (id=5) with LevenshteinSimilarityFn(threshold=7.0, maxSimilarity=10.0) and BetaShapeParameters(alpha=448.134, beta=44813.4)
+
+Partition function settings
+---------------------------
+  * KDTreePartitioner(numLevels=6, attributeIds=[3,5,2,0])
+
+Project settings
+----------------
+  * Using randomSeed=319158
+  * Using expectedMaxClusterSize=10
+  * Saving Markov chain and complete final state to '/data/neil/jcgs/NCVR_64partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints-2/'
+
+Scheduled steps
+---------------
+  * SampleStep: Evolving the chain from saved state with sampleSize=20000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 110000
+  * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 110000) using {'pairwise', 'cluster'} metrics
