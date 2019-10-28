@@ -1,6 +1,9 @@
-library(ggplot2)
-library(dplyr)
+`library(ggplot2)
+library(dplyr)`
 
+# Assumes that you are in the AWS working directory
+# Use PCG-I due to better performance
+# ATTN: Remove hard coding
 expts <- list(list(name = "NLTCS", numRecords = 57077, path = "../aws/results/NLTCS_16partitions_PCG-I"),
               list(name = "ABSEmployee", numRecords = 600000, path = "../aws/results/ABSEmployee_64partitions_PCG-I"), 
               list(name = "NCVR", numRecords = 448134, path = "../aws/results/NCVR_64partitions_PCG-I"),
@@ -26,10 +29,10 @@ results <- lapply(expts, function(expt) {
 
 results.combined <- bind_rows(results)
 
-pdf("partition-sizes-plot.pdf", height = plotHeight, width = plotWidth)
+#pdf("partition-sizes-plot.pdf", height = plotHeight, width = plotWidth)
 results.combined %>%
   ggplot(aes(x = iteration)) + 
   geom_line(aes(y = absdev, col = dataset), alpha = 0.7, size = 0.2) + 
   labs(x = "Iteration", y = "Rel. abs. deviation", col = "Data set") + 
   theme(legend.margin=margin(0,0,0,0), legend.key.size = unit(10,"points"), legend.text = element_text(size = 6))
-dev.off()
+#dev.off()
