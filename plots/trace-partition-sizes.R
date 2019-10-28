@@ -1,3 +1,5 @@
+setwd("~/work_on/packages/dblink-experiments/aws")
+
 `library(ggplot2)
 library(dplyr)`
 
@@ -35,4 +37,4 @@ results.combined %>%
   geom_line(aes(y = absdev, col = dataset), alpha = 0.7, size = 0.2) + 
   labs(x = "Iteration", y = "Rel. abs. deviation", col = "Data set") + 
   theme(legend.margin=margin(0,0,0,0), legend.key.size = unit(10,"points"), legend.text = element_text(size = 6))
-#dev.off()
+#ddev.off()
