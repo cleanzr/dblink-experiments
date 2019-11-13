@@ -1,6 +1,6 @@
 #!/bin/bash
 /appdata/spark/spark-2.3.1-bin-hadoop2.7/bin/spark-submit \
-    --class com.github.ngmarchant.dblink.Run \
+    --class com.github.cleanzr.dblink.Run \
     --master local[*] \
     --driver-memory 128G \
     --conf "spark.driver.extraJavaOptions -Dlog4j.configuration=file:/log4j.properties" \

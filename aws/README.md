@@ -33,7 +33,7 @@ script.
 | spark-log4j    | log4j.logger.org.apache.spark                                         | WARN   |
 | spark-log4j    | log4j.logger.parquet                                                  | ERROR  |
 | spark-log4j    | log4j.logger.org.spark_project.jetty.util.component.AbstractLifeCycle | ERROR  |
-| spark-log4j    | log4j.logger.com.github.ngmarchant.dblink                             | INFO   |
+| spark-log4j    | log4j.logger.com.github.cleanzr.dblink                                | INFO   |
 
 
 ## Before running the script...

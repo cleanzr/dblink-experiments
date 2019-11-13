@@ -185,7 +185,7 @@ emr_client.run_job_flow(
                     '--deploy-mode',
                     'cluster',
                     '--class',
-                    'com.github.ngmarchant.dblink.Run',
+                    'com.github.cleanzr.dblink.Run',
                     dblink_jar_path,
                     's3://' + out_url.netloc + '/' + config_fname
                 ]
@@ -215,7 +215,7 @@ emr_client.run_job_flow(
         {
             'Classification': 'spark-log4j',
             'Properties': {
-                'log4j.logger.com.github.ngmarchant.dblink': 'INFO',
+                'log4j.logger.com.github.cleanzr.dblink': 'INFO',
                 'log4j.logger.org.spark_project.jetty.util.component.AbstractLifeCycle': 'ERROR',
                 'log4j.logger.org.apache.parquet': 'ERROR',
                 'log4j.logger.parquet': 'ERROR',
