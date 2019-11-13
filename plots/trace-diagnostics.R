@@ -1,5 +1,3 @@
-setwd("~/work_on/packages/dblink-experiments/aws")
-
 library(dplyr)
 library(ggplot2)
 library(stringr)
