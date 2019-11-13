@@ -1,6 +1,6 @@
 Data settings
 -------------
-  * Using data files located at '/data/neil/datasets/ncvoter-20140619-temporal-balanced-ratio-1to1.csv'
+  * Using data files located at '/data/datasets/ncvoter-20140619-temporal-balanced-ratio-1to1.csv'
   * The record identifier attribute is 'rec_id'
   * The file identifier attribute is 'file_id'
   * The entity identifier attribute is 'voter_id'
@@ -23,8 +23,8 @@ Project settings
 ----------------
   * Using randomSeed=319158
   * Using expectedMaxClusterSize=10
-  * Saving Markov chain and complete final state to '/data/neil/jcgs/NCVR_64partitions_PCG-I/'
-  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints-2/'
+  * Saving Markov chain and complete final state to '/data/jcgs/NCVR_64partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/jcgs/dblink-checkpoints-2/'
 
 Scheduled steps
 ---------------

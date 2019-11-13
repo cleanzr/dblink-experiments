@@ -4,6 +4,6 @@
     --master local[*] \
     --driver-memory 128G \
     --conf "spark.driver.extraJavaOptions -Dlog4j.configuration=file:/log4j.properties" \
-    --driver-class-path /data/neil/jcgs/dblink-assembly-0.1.jar \
-    /data/neil/jcgs/dblink-assembly-0.1.jar \
-    /data/neil/jcgs/RLdata10000_2partitions_PCG-I.conf
+    --driver-class-path /data/jcgs/dblink-assembly-0.1.jar \
+    /data/jcgs/dblink-assembly-0.1.jar \
+    /data/jcgs/RLdata10000_2partitions_PCG-I.conf

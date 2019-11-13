@@ -1,6 +1,6 @@
 Data settings
 -------------
-  * Using data files located at '/data/neil/datasets/comp.fixed.0810.csv'
+  * Using data files located at '/data/datasets/comp.fixed.0810.csv'
   * The record identifier attribute is 'RECID'
   * The file identifier attribute is 'ANNO'
   * The entity identifier attribute is 'ENTID'
@@ -25,7 +25,7 @@ Project settings
 ----------------
   * Using randomSeed=319158
   * Using expectedMaxClusterSize=10
-  * Saving Markov chain and complete final state to '/data/neil/jcgs/SHIW_8partitions_PCG-I/'
+  * Saving Markov chain and complete final state to '/data/jcgs/SHIW_8partitions_PCG-I/'
   * Saving Spark checkpoints to '/scratch/dblink-checkpoints-2/'
 
 Scheduled steps

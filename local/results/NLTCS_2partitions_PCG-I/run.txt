@@ -1,6 +1,6 @@
 Data settings
 -------------
-  * Using data files located at '/data/neil/datasets/proc_nltcs.csv'
+  * Using data files located at '/data/datasets/proc_nltcs.csv'
   * The record identifier attribute is 'REC'
   * The file identifier attribute is 'FILE'
   * The entity identifier attribute is 'SEQ'
@@ -23,8 +23,8 @@ Project settings
 ----------------
   * Using randomSeed=319158
   * Using expectedMaxClusterSize=10
-  * Saving Markov chain and complete final state to '/data/neil/jcgs/NLTCS_2partitions_PCG-I/'
-  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints/'
+  * Saving Markov chain and complete final state to '/data/jcgs/NLTCS_2partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/jcgs/dblink-checkpoints/'
 
 Scheduled steps
 ---------------

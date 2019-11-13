@@ -1,6 +1,6 @@
 Data settings
 -------------
-  * Using data files located at '/data/neil/datasets/RLdata10000.csv'
+  * Using data files located at '/data/datasets/RLdata10000.csv'
   * The record identifier attribute is 'rec_id'
   * There is no file identifier
   * The entity identifier attribute is 'ent_id'
@@ -22,8 +22,8 @@ Project settings
 ----------------
   * Using randomSeed=319158
   * Using expectedMaxClusterSize=10
-  * Saving Markov chain and complete final state to '/data/neil/jcgs/RLdata10000_2partitions_PCG-I'
-  * Saving Spark checkpoints to '/scratch/neil/dblink-checkpoints'
+  * Saving Markov chain and complete final state to '/data/jcgs/RLdata10000_2partitions_PCG-I'
+  * Saving Spark checkpoints to '/scratch/jcgs/dblink-checkpoints'
 
 Scheduled steps
 ---------------
