@@ -12,7 +12,7 @@ useful for assessing convergence of the Markov chain.
 
 In this repository, we reproduce the experiments in [(Marchant et al, 2019)](https://arxiv.org/abs/1909.06039). 
 
-Specifically, in (Marchant et al, 2019)](https://arxiv.org/abs/1909.06039), two types of experiments are run, those on a local server and those on Amazon Web Services (AWS). In this repository, we replicates both sets of experiments, providing configurations files that will reproduce the experiments for the five data sets that were utilized in the paper. 
+Specifically, in [Marchant et al, 2019)](https://arxiv.org/abs/1909.06039), two types of experiments are run, those on a local server and those on Amazon Web Services (AWS). In this repository, we replicates both sets of experiments, providing configurations files that will reproduce the experiments for the five data sets that were utilized in the paper. 
 
 For example, for the local server and a data set, we provide a shell script run.sh as well as a configuration file dataset.config that produces the following output for each data set:
 
