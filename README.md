@@ -1,7 +1,7 @@
 # dblink-experiments
 
-dblink` is a Spark package for performing unsupervised entity resolution 
-(ER) on structured data. The open source code can be found at [dblink`](https://github.com/cleanzr/dblink/) and the 
+`dblink` is a Spark package for performing unsupervised entity resolution 
+(ER) on structured data. The open source code can be found at [`dblink`](https://github.com/cleanzr/dblink/) and the 
 paper can be found at [(Marchant et al, 2019)](https://arxiv.org/abs/1909.06039). Unlike many ER algorithms, `dblink` approximates the full posterior distribution over clusterings of records (into entities).
 This facilitates propagation of uncertainty to post-ER analysis, 
 and provides a framework for answering probabilistic queries about entity 
