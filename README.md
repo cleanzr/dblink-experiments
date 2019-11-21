@@ -14,6 +14,23 @@ In this repository, we reproduce the experiments in [(Marchant et al, 2019)](htt
 
 Specifically, in (Marchant et al, 2019)](https://arxiv.org/abs/1909.06039), two types of experiments are run, those on a local server and those on Amazon Web Services (AWS). In this repository, we replicates both sets of experiments, providing configurations files that will reproduce the experiments for the five data sets that were utilized in the paper. 
 
+For example, for the local server and a data set, we provide a shell script run.sh as well as a configuration file dataset.config that produces the following output for each data set:
+
+1. cluster-size-distribution.csv
+2. diagnostics.csv
+3. evaluation-results.csv
+4. partition-sizes.csv
+5. results.csv
+
+A full description of these files can be found at [dblink`](https://github.com/cleanzr/dblink/). 
+
+In order to analyze the output of these files, we have provided scripts to aide the user, which can be found at 
+[plots][INSERT PUBLIC LINK LATER], which produce the following plots:
+
+1. Traceplots
+2. Posterior Bias Plots
+3. What Else? (The plot names are not very informative). 
+
 
 TODO:
 * Short summary: code for reproducing experiments in dblink paper
