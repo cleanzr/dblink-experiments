@@ -22,13 +22,13 @@ We evaluation dblink on five real and synthetic data sets, which we describe bel
  3. NLTCS  A subset of the National Long-Term 
   Care Survey~\cite{manton_nltcs_2010} comprising the 
   1982, 1989 and 1994 waves. We use the SEX, DOB, STATE and REGOFF attributes.
-  This data set can be accessed via \url{https://www.nia.nih.gov/research/resource/national-long-term-care-survey-nltcs}
+  This data set can be accessed via https://www.nia.nih.gov/research/resource/national-long-term-care-survey-nltcs
   and registering through the webpage to access the data. (The data cannot be re-published online). 
   4. SHIW0810. A subset from the Bank of Italy's 
   Survey on Household Income and Wealth  
   comprising the 2008 and 2010 waves. We use 8 attributes: IREG, SESSO, ANASC, STUDIO, PAR, 
   STACIV, PERC and CFDIC.
-  This dataset can be accessed at url{https://github.com/cleanzr/italy}.
+  This dataset can be accessed at https://github.com/cleanzr/italy.
   5. RLdata10000.  A synthetic data set provided 
   with the RecordLinkage R 
   package. We use all attributes except for fname\_c2 and lname\_c2.
