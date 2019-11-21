@@ -22,7 +22,7 @@ For example, for the local server and a data set, we provide a shell script run.
 4. partition-sizes.csv
 5. results.csv
 
-A full description of these files can be found at [dblink`](https://github.com/cleanzr/dblink/). 
+A full description of these files can be found at [`dblink`](https://github.com/cleanzr/dblink/). 
 
 In order to analyze the output of these files, we have provided scripts to aide the user, which can be found at 
 [plots][INSERT PUBLIC LINK LATER], which produce the following plots:
