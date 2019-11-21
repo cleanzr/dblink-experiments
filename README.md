@@ -1,5 +1,20 @@
 # dblink-experiments
 
+dblink` is a Spark package for performing unsupervised entity resolution 
+(ER) on structured data. The open source code can be found at [dblink`](https://github.com/cleanzr/dblink/) and the 
+paper can be found at [(Marchant et al, 2019)](https://arxiv.org/abs/1909.06039). Unlike many ER algorithms, `dblink` approximates the full posterior distribution over clusterings of records (into entities).
+This facilitates propagation of uncertainty to post-ER analysis, 
+and provides a framework for answering probabilistic queries about entity 
+membership. `dblink` approximates the posterior using Markov chain Monte Carlo.
+It writes samples (of clustering configurations) to disk in Parquet format.
+Diagnostic summary statistics are also written to disk in CSV format—these are 
+useful for assessing convergence of the Markov chain.
+
+In this repository, we reproduce the experiments in [(Marchant et al, 2019)](https://arxiv.org/abs/1909.06039). 
+
+Specifically, in (Marchant et al, 2019)](https://arxiv.org/abs/1909.06039), two types of experiments are run, those on a local server and those on Amazon Web Services (AWS). In this repository, we replicates both sets of experiments, providing configurations files that will reproduce the experiments for the five data sets that were utilized in the paper. 
+
+
 TODO:
 * Short summary: code for reproducing experiments in dblink paper
 * Cite paper
