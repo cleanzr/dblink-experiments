@@ -60,7 +60,7 @@ We evaluation dblink on five real and synthetic data sets, which we describe bel
   Survey on Household Income and Wealth  
   comprising the 2008 and 2010 waves. We use 8 attributes: IREG, SESSO, ANASC, STUDIO, PAR, 
   STACIV, PERC and CFDIC.
-  This dataset can be accessed at https://github.com/cleanzr/italy.
+  This dataset can be accessed at https://github.com/ngmarchant/shiw.
   5. RLdata10000.  A synthetic data set provided 
   with the RecordLinkage R 
   package. We use all attributes except for fname\_c2 and lname\_c2.
