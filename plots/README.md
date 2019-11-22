@@ -1,4 +1,4 @@
-TODO: This directory needs a more information discription regarding what these plots are doing. 
+TODO: describe each plot. 
 
 This directory contains R scripts for producing the plots in the paper. The dependencies are:
 * ggplot2
