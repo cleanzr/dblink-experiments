@@ -1,69 +1,84 @@
 # dblink-experiments
 
-`dblink` is a Spark package for performing unsupervised entity resolution 
-(ER) on structured data. The open source code can be found at [`dblink`](https://github.com/cleanzr/dblink/) and the 
-paper can be found at [(Marchant et al, 2019)](https://arxiv.org/abs/1909.06039). Unlike many ER algorithms, `dblink` approximates the full posterior distribution over clusterings of records (into entities).
-This facilitates propagation of uncertainty to post-ER analysis, 
-and provides a framework for answering probabilistic queries about entity 
-membership. `dblink` approximates the posterior using Markov chain Monte Carlo.
-It writes samples (of clustering configurations) to disk in Parquet format.
-Diagnostic summary statistics are also written to disk in CSV format—these are 
-useful for assessing convergence of the Markov chain.
+This repository contains scripts, data and documentation for reproducing 
+experiments in the following paper:
 
-In this repository, we reproduce the experiments in [Marchant et al, 2019](https://arxiv.org/abs/1909.06039). 
+> Marchant, N. G., Steorts R. C., Kaplan, A., Rubinstein, B. I. P., Elazar, 
+> D. N. (2019). dblink: Distributed End-to-End Bayesian Entity Resolution. 
+> _eprint arXiv:1909.06039_ 
+> URL: [https://arxiv.org/abs/1909.06039](https://arxiv.org/abs/1909.06039).
 
-Specifically, in [Marchant et al, 2019](https://arxiv.org/abs/1909.06039), two types of experiments are run, those on a local server and those on Amazon Web Services (AWS). In this repository, we replicates both sets of experiments, providing configurations files that will reproduce the experiments for the five data sets that were utilized in the paper. 
+which accompanies our [dblink](https://github.com/cleanzr/dblink) Spark 
+package.
 
-For example, for the local server and a data set, we provide a shell script run.sh as well as a configuration file dataset.config that produces the following output for each data set:
+The workflow for reproducing the experiments involves:
 
+1. Obtaining the five data sets. See the section [below](#data-sets) for 
+details.
+2. Obtaining/building the dblink Spark package. Instructions are provided 
+in the dblink [repository](https://github.com/cleanzr/dblink).
+3. Running the experiments on a Spark cluster. We tested dblink on a local 
+server in pseudocluster mode (see `local` directory) and on a Spark cluster 
+in AWS (see `aws` directory). 
+4. After running the experiments, the plots in the paper can be generated 
+using the R scripts in the `plots` directory.
+
+## Directory structure
+* `aws`: contains scripts/config files/results for experiments run on a 
+YARN deployment of Spark using the Amazon Elastic MapReduce service. 
+* `data`: contains two of the data sets used in the experiments.
+* `local`: contains scripts/config files/results for experiments run on a 
+local server in pseudocluster mode.
+* `plots`: contains R scripts for generating the plots in the paper.
+
+## Output of dblink
+Each dblink experiment produces the following files which are used to 
+populate the tables and generate the plots in the paper:
 1. cluster-size-distribution.csv
 2. diagnostics.csv
-3. evaluation-results.csv
+3. evaluation-results.txt
 4. partition-sizes.csv
-5. results.csv
+5. run.txt
 
-A full description of these files can be found at [`dblink`](https://github.com/cleanzr/dblink/). 
+Since running these experiments can be time consuming (some take approx. 24 
+hours) we have included the results in the repository. 
+See the `local/results/` and `aws/results` directories. 
 
-In order to analyze the output of these files, we have provided scripts to aide the user, which can be found at 
-[plots][INSERT PUBLIC LINK LATER], which produce the following plots:
+For a full description of dblink output, see the documentation [here](https://github.com/cleanzr/dblink/blob/master/docs/guide.md). 
 
-1. Traceplots
-2. Posterior Bias Plots
-3. What Else? (The plot names are not very informative). 
+## Data sets
+We evaluated d-blink on five data sets in our paper. 
+Unfortunately, we are unable to make all of the data sets publicly available 
+due to usage restrictions. 
+Below we describe how to access each data set. 
+Feel free to contact us for further information.
 
+1. `ABSEmployee`. 
+A synthetic data set used internally for linkage experiments at the Australian 
+Bureau of Statistics (ABS). 
+It simulates an employment census and two supplementary surveys. 
+The data is available for download [here]().
+2. `NCVR`. 
+Two snapshots from the North Carolina Voter Registration database taken two 
+months apart. 
+The snapshots are filtered to include only those voters whose details changed 
+over the two-month period. 
+The data set was generously provided by Peter Christen. 
+We are unable to share this publicly. 
+3. `NLTCS`. 
+A subset of the National Long-Term Care Survey comprising the 1982, 1989 and 
+1994 waves. 
+We use the SEX, DOB, STATE and REGOFF attributes. 
+The data set is available from [NACDA](https://doi.org/10.3886/ICPSR09681.v5) 
+after signing a data use agreement.
+4. `SHIW0810`. 
+A subset from the Bank of Italy's Survey on Household Income and Wealth 
+comprising the 2008 and 2010 waves. 
+Use of this data is subject to conditions described [here](https://www.bancaditalia.it/statistiche/tematiche/indagini-famiglie-imprese/bilanci-famiglie/distribuzione-microdati/index.html). 
+We have written a script which downloads and pre-processes the data, available 
+[here](https://github.com/ngmarchant/shiw).
+5. `RLdata10000`. 
+A synthetic data set provided with the RecordLinkage R package. 
+We do not have permission to redistribute this data set, however we have 
+written an R [script](data/RLdata10000.R) which saves the data in CSV format.
 
-TODO:
-* Short summary: code for reproducing experiments in dblink paper
-* Cite paper
-* Link to dblink repo
-* Explain the directory structure (ran experiments twice: once on local server, once on AWS)
-
-## Data sets:
-
-We evaluation dblink on five real and synthetic data sets, which we describe below. 
-
-1. ABSEmployee. A synthetic data set used 
-  internally for linkage experiments at [REDACTED].
-  It simulates an employment census and two supplementary 
-  surveys. 
-2. NCVR. Two snapshots from the North Carolina 
-  Voter Registration database taken two months 
-  apart at [REDACTED]. The snapshots are filtered to include only those voters 
-  whose details changed over the two-month period.
-  We use the full name, age, gender and zip code attributes.
- 3. NLTCS  A subset of the National Long-Term 
-  Care Survey~\cite{manton_nltcs_2010} comprising the 
-  1982, 1989 and 1994 waves. We use the SEX, DOB, STATE and REGOFF attributes.
-  This data set can be accessed via https://www.nia.nih.gov/research/resource/national-long-term-care-survey-nltcs
-  and registering through the webpage to access the data. (The data cannot be re-published online). 
-  4. SHIW0810. A subset from the Bank of Italy's 
-  Survey on Household Income and Wealth  
-  comprising the 2008 and 2010 waves. We use 8 attributes: IREG, SESSO, ANASC, STUDIO, PAR, 
-  STACIV, PERC and CFDIC.
-  This dataset can be accessed at https://github.com/ngmarchant/shiw.
-  5. RLdata10000.  A synthetic data set provided 
-  with the RecordLinkage R 
-  package. We use all attributes except for fname\_c2 and lname\_c2.
-  This data set can be accessed via CRAN. TODO: Do we want to put this data set properly formatted on cleanzr for easy access?  
- 
- TODO: Make sure to give all references to the relevant citations and weblinks where the data can be found. 
