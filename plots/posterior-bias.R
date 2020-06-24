@@ -3,7 +3,7 @@ library(ggplot2)
 library(stringr)
 
 expts <- list(list(name = "ABSEmployee", burnin = 10000, numRecords = 600000, trueNumEntities = 400000, path = "../aws/results/ABSEmployee_64partitions_PCG-I"),
-              list(name = "NCVR", burnin = 60000, numRecords = 448134, trueNumEntities = 296433, path = "../aws/results/NCVR_64partitions_PCG-I"),
+              list(name = "NCVR", burnin = 210000, numRecords = 448134, trueNumEntities = 296433, path = "../aws/results/NCVR_64partitions_PCG-I"),
               list(name = "NLTCS", burnin = 10000, numRecords = 57077, trueNumEntities = 34945, path = "../aws/results/NLTCS_16partitions_PCG-I"),
               list(name = "RLdata10000", burnin = 10000, numRecords = 10000, trueNumEntities = 9000, path = "../aws/results/RLdata10000_2partitions_PCG-I"),
               list(name = "SHIW0810", burnin = 10000, numRecords = 39743, trueNumEntities = 28584, path = "../aws/results/SHIW_8partitions_PCG-I"))

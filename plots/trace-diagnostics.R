@@ -6,7 +6,7 @@ library(tidyr)
 
 # Details of each experiment
 expts <- list(list(name = "ABSEmployee", path = "../local/results/ABSEmployee_64partitions_PCG-I", burnin = 10000),
-              list(name = "NCVR", path = "../local/results/NCVR_64partitions_PCG-I", burnin = 110000),
+              list(name = "NCVR", path = "../local/results/NCVR_64partitions_PCG-I", burnin = 210000),
               list(name = "NLTCS", path = "../local/results/NLTCS_16partitions_PCG-I", burnin = 10000),
               list(name = "RLdata10000", path = "../local/results/RLdata10000_2partitions_PCG-I", burnin = 10000),
               list(name = "SHIW", path = "../local/results/SHIW_8partitions_PCG-I", burnin = 10000))
