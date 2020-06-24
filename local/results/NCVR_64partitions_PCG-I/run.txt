@@ -1,6 +1,6 @@
 Data settings
 -------------
-  * Using data files located at '/data/nmarchant/datasets/ncvoter-20140619-temporal-balanced-ratio-1to1.csv'
+  * Using data files located at '/data/datasets/datasets/ncvoter-20140619-temporal-balanced-ratio-1to1.csv'
   * The record identifier attribute is 'rec_id'
   * The file identifier attribute is 'file_id'
   * The entity identifier attribute is 'voter_id'
@@ -23,11 +23,11 @@ Project settings
 ----------------
   * Using randomSeed=319158
   * Using expectedMaxClusterSize=10
-  * Saving Markov chain and complete final state to '/data/nmarchant/jcgs/NCVR_64partitions_PCG-I/'
-  * Saving Spark checkpoints to '/scratch/nmarchant/dblink-checkpoints-2/'
+  * Saving Markov chain and complete final state to '/data/jcgs/NCVR_64partitions_PCG-I/'
+  * Saving Spark checkpoints to '/scratch/jcgs/dblink-checkpoints-2/'
 
 Scheduled steps
 ---------------
-  * SampleStep: Evolving the chain from saved state with sampleSize=10000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
+  * SampleStep: Evolving the chain from saved state with sampleSize=30000, burninInterval=0, thinningInterval=10 and sampler=PCG-I
   * SummarizeStep: Calculating summary quantities {'cluster-size-distribution', 'partition-sizes'} along the chain for iterations >= 210000
   * EvaluateStep: Evaluating sMPC clusters (computed from the chain for iterations >= 210000) using {'pairwise', 'cluster'} metrics
