@@ -3,10 +3,11 @@
 This repository contains scripts, data and documentation for reproducing 
 experiments in the following paper:
 
-> Marchant, N. G., Steorts R. C., Kaplan, A., Rubinstein, B. I. P., Elazar, 
-> D. N. (2019). dblink: Distributed End-to-End Bayesian Entity Resolution. 
-> _eprint arXiv:1909.06039_ 
-> URL: [https://arxiv.org/abs/1909.06039](https://arxiv.org/abs/1909.06039).
+> Marchant, N. G., Kaplan, A., Elazar, D. N., Rubinstein, B. I. P. and 
+> Steorts, R. C. (2021). d-blink: Distributed End-to-End Bayesian Entity 
+> Resolution. _Journal of Computational and Graphical Statistics_, _30_(2), 
+> 406–421. DOI: [10.1080/10618600.2020.1825451](https://doi.org/10.1080/10618600.2020.1825451)
+> arXiv: [1909.06039](https://arxiv.org/abs/1909.06039).
 
 which accompanies our [dblink](https://github.com/cleanzr/dblink) Spark 
 package.
